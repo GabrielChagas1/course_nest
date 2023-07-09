@@ -9,3 +9,4 @@ import { ValidationPipe } from '@nestjs/common';
       transform: true,
     }),
   );
+  await app.listen(3000);
