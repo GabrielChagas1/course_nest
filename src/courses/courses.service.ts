@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Course } from './entities/course.entity';
 
+@Injectable()
+export class CoursesService {
   private courses: Course[] = [
     {
       id: 1,
@@ -30,6 +32,7 @@ import { Course } from './entities/course.entity';
 
     this.courses[indexCourse] = updateCourseDto;
   }
+
   remove(id: string) {
     const indexCourse = this.courses.findIndex(
       (course) => course.id === Number(id),
@@ -39,3 +42,4 @@ import { Course } from './entities/course.entity';
       this.courses.splice(indexCourse, 1);
     }
   }
+}
