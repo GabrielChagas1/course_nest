@@ -18,3 +18,7 @@ import { Course } from './entities/course.entity';
     return this.courses.find((course) => course.id === Number(id));
   }
 
+  create(createCourseDto: any) {
+    this.courses.push(createCourseDto);
+    return createCourseDto;
+  }
