@@ -22,3 +22,11 @@ import { Course } from './entities/course.entity';
     this.courses.push(createCourseDto);
     return createCourseDto;
   }
+
+  update(id: string, updateCourseDto: any) {
+    const indexCourse = this.courses.findIndex(
+      (course) => course.id === Number(id),
+    );
+
+    this.courses[indexCourse] = updateCourseDto;
+  }
