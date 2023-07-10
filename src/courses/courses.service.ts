@@ -7,3 +7,10 @@ import { Course } from './entities/course.entity';
       name: 'Fundamentos do framework NestJS',
       description: 'Fundamentos do framework NestJS',
       tags: ['node.js', 'nestjs', 'javascript'],
+    },
+  ];
+
+  findAll() {
+    return this.courses;
+  }
+
