@@ -14,3 +14,7 @@ import { Course } from './entities/course.entity';
     return this.courses;
   }
 
+  findOne(id: string) {
+    return this.courses.find((course) => course.id === Number(id));
+  }
+
