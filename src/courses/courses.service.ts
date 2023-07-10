@@ -30,3 +30,12 @@ import { Course } from './entities/course.entity';
 
     this.courses[indexCourse] = updateCourseDto;
   }
+  remove(id: string) {
+    const indexCourse = this.courses.findIndex(
+      (course) => course.id === Number(id),
+    );
+
+    if (indexCourse >= 0) {
+      this.courses.splice(indexCourse, 1);
+    }
+  }
