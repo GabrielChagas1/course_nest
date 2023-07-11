@@ -17,7 +17,12 @@ export class CoursesService {
   }
 
   findOne(id: string) {
-    return this.courses.find((course) => course.id === Number(id));
+    const course = this.courseRepository.findOne(id);
+    if (!course) {
+      throw new NotFoundException(`Course ID ${id} not found`);
+    }
+
+    return course;
   }
 
   create(createCourseDto: any) {
