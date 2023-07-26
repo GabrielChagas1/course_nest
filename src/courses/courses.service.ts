@@ -37,7 +37,12 @@ export class CoursesService {
       createCourseDto.tags.map((name) => this.preloadTagByName(name)),
     );
 
-    this.courses[indexCourse] = updateCourseDto;
+    const course = this.courseRepository.create({
+      ...createCourseDto,
+      tags,
+    });
+    return this.courseRepository.save(course);
+  }
   }
 
   remove(id: string) {
