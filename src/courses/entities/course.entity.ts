@@ -1,6 +1,7 @@
   Column,
   Entity,
   JoinTable,
+  ManyToMany,
 
 @Entity('courses')
 export class Course {
