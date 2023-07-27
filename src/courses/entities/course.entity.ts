@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+  Column,
 
 @Entity('courses')
 export class Course {
