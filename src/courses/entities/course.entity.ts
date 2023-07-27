@@ -1,5 +1,6 @@
   Column,
   Entity,
+  JoinTable,
 
 @Entity('courses')
 export class Course {
