@@ -11,6 +11,7 @@ export class CoursesService {
   constructor(
     @InjectRepository(Course)
     private readonly courseRepository: Repository<Course>,
+
     @InjectRepository(Tag)
     private readonly tagRepository: Repository<Tag>,
   ) {}
@@ -73,13 +74,13 @@ export class CoursesService {
     return this.courseRepository.remove(course);
   }
 
-  remove(id: string) {
-    const indexCourse = this.courses.findIndex(
-      (course) => course.id === Number(id),
-    );
+  private async preloadTagByName(name: string): Promise<Tag> {
+    const tag = await this.tagRepository.findOne({ name });
 
-    if (indexCourse >= 0) {
-      this.courses.splice(indexCourse, 1);
+    if (tag) {
+      return tag;
     }
+
+    return this.tagRepository.create({ name });
   }
 }
