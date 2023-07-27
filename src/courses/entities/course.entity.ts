@@ -2,6 +2,7 @@
   Entity,
   JoinTable,
   ManyToMany,
+  PrimaryGeneratedColumn,
 
 @Entity('courses')
 export class Course {
