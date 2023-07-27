@@ -1,8 +1,11 @@
+import {
   Column,
   Entity,
   JoinTable,
   ManyToMany,
   PrimaryGeneratedColumn,
+} from 'typeorm';
+import { Tag } from './tag.entity';
 
 @Entity('courses')
 export class Course {
