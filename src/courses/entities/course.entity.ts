@@ -1,4 +1,5 @@
   Column,
+  Entity,
 
 @Entity('courses')
 export class Course {
