@@ -43,6 +43,23 @@ export class CoursesService {
     });
     return this.courseRepository.save(course);
   }
+
+  async update(id: string, updateCourseDto: UpdateCourseDto) {
+    const tags =
+      updateCourseDto.tags &&
+      (await Promise.all(
+        updateCourseDto.tags.map((name) => this.preloadTagByName(name)),
+      ));
+    const course = await this.courseRepository.preload({
+      id: +id,
+      ...updateCourseDto,
+      tags,
+    });
+
+    if (!course) {
+      throw new NotFoundException(`Course ID ${id} not found`);
+    }
+
   }
 
   remove(id: string) {
