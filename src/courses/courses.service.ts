@@ -60,6 +60,17 @@ export class CoursesService {
       throw new NotFoundException(`Course ID ${id} not found`);
     }
 
+    return this.courseRepository.save(course);
+  }
+
+  async remove(id: string) {
+    const course = await this.courseRepository.findOne(id);
+
+    if (!course) {
+      throw new NotFoundException(`Course ID ${id} not found`);
+    }
+
+    return this.courseRepository.remove(course);
   }
 
   remove(id: string) {
