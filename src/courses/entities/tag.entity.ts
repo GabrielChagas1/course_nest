@@ -8,3 +8,6 @@ import {
 import { Course } from './course.entity';
   @PrimaryGeneratedColumn()
   id: number;
+
+  @Column()
+  name: string;
