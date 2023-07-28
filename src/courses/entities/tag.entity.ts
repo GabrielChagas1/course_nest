@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Course } from './course.entity';
+@Entity('tags')
   @PrimaryGeneratedColumn()
   id: number;
 
