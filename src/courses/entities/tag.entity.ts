@@ -11,3 +11,5 @@ import { Course } from './course.entity';
 
   @Column()
   name: string;
+  @ManyToMany(() => Course, (course) => course.tags)
+  courses: Course[];
