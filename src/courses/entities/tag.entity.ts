@@ -1,2 +1,3 @@
 import {
   Column,
+  Entity,
