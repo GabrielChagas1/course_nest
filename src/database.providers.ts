@@ -13,3 +13,5 @@ export const databaseProviders = [
         database: 'postgres',
         entities: [__dirname + '/../**/*.entity.js'],
         synchronize: true,
+      });
+
