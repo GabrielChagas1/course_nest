@@ -11,3 +11,4 @@ export const databaseProviders = [
         username: 'postgres',
         password: 'postgres',
         database: 'postgres',
+        entities: [__dirname + '/../**/*.entity.js'],
