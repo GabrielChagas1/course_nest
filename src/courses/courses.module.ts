@@ -5,7 +5,7 @@ import { DatabaseModule } from 'src/database/database.module';
 import { coursesProviders } from './courses.providers';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Course, Tag])],
+  imports: [DatabaseModule],
   controllers: [CoursesController],
   providers: [CoursesService],
 })
