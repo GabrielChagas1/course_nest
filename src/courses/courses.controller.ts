@@ -25,7 +25,7 @@ export class CoursesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    const course = this.coursesService.findOne(id);
+    const course = this.coursesService.findOne(+id);
 
     if (!course) {
       throw new HttpException(
