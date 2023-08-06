@@ -9,3 +9,4 @@ export const coursesProviders = [
     inject: ['DATA_SOURCE'],
   },
     provide: 'TAGS_REPOSITORY',
+    useFactory: (dataSource: DataSource) => dataSource.getRepository(Tag),
