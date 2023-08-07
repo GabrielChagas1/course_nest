@@ -17,20 +17,9 @@ describe('CoursesService', () => {
   let date;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      providers: [
-        CoursesService,
-        { provide: Connection, useValue: {} },
-        {
-          provide: getRepositoryToken(Course),
-          useValue: createMockRepository(),
-        },
-        { provide: getRepositoryToken(Tag), useValue: createMockRepository() },
-      ],
-    }).compile();
-
-    service = module.get<CoursesService>(CoursesService);
-    courseRepository = module.get<MockRepository>(getRepositoryToken(Course));
+    service = new CoursesService();
+    id = 10;
+    date = new Date();
   });
 
   it('should be defined', () => {
