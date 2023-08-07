@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { CoursesService } from './courses.service';
 import { Repository } from 'typeorm';
 import { NotFoundException } from '@nestjs/common';
+import { CreateCourseDto } from './dto/create-course.dto';
 
 type MockRepository<T = any> = Partial<Record<keyof Repository<T>, jest.Mock>>;
 
