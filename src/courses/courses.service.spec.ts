@@ -26,11 +26,7 @@ describe('CoursesService', () => {
     expect(service).toBeDefined();
   });
 
-  describe('findOne', () => {
-    describe('buscar curso pelo ID', () => {
-      it('deve retornar o objeto Course', async () => {
-        const courseId = '1';
-        const expectedCourse = {};
+  it('should creates a course', async () => {
 
         courseRepository.findOne.mockReturnValue(expectedCourse);
         const course = await service.findOne(courseId);
