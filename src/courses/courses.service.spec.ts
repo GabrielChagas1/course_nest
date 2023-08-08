@@ -41,6 +41,7 @@ describe('CoursesService', () => {
       created_at: date,
       tags: expectOutputTags,
     };
+    const mockCourseRepository = {
 
         courseRepository.findOne.mockReturnValue(expectedCourse);
         const course = await service.findOne(courseId);
