@@ -42,6 +42,7 @@ describe('CoursesService', () => {
       tags: expectOutputTags,
     };
     const mockCourseRepository = {
+      create: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
 
         courseRepository.findOne.mockReturnValue(expectedCourse);
         const course = await service.findOne(courseId);
