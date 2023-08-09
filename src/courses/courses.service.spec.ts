@@ -58,6 +58,7 @@ describe('CoursesService', () => {
       description: 'Test description',
       tags: ['nestjs'],
     };
+    const newCourse = await service.create(createCourseDto);
 
         courseRepository.findOne.mockReturnValue(expectedCourse);
         const course = await service.findOne(courseId);
