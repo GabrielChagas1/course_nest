@@ -53,6 +53,11 @@ describe('CoursesService', () => {
     service['courseRepository'] = mockCourseRepository;
     //@ts-expect-error defined part of methods
     service['tagRepository'] = mockTagRepository;
+    const createCourseDto: CreateCourseDto = {
+      name: 'Test',
+      description: 'Test description',
+      tags: ['nestjs'],
+    };
 
         courseRepository.findOne.mockReturnValue(expectedCourse);
         const course = await service.findOne(courseId);
