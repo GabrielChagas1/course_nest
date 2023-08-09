@@ -92,9 +92,7 @@ describe('CoursesService', () => {
     expect(expectOutputCourse).toStrictEqual(courses);
       });
 
-      it('deve retornar um NotFoundException', async () => {
-        const courseId = '1';
-        courseRepository.findOne.mockReturnValue(undefined);
+  it('should gets a course', async () => {
 
         try {
           await service.findOne(courseId);
