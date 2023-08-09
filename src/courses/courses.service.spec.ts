@@ -60,6 +60,7 @@ describe('CoursesService', () => {
     };
     const newCourse = await service.create(createCourseDto);
     expect(mockCourseRepository.save).toHaveBeenCalled();
+    expect(expectOutputCourse).toStrictEqual(newCourse);
 
         courseRepository.findOne.mockReturnValue(expectedCourse);
         const course = await service.findOne(courseId);
