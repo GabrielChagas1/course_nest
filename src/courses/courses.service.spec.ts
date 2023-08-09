@@ -88,8 +88,8 @@ describe('CoursesService', () => {
     service['courseRepository'] = mockCourseRepository;
 
     const courses = await service.findAll();
-        const course = await service.findOne(courseId);
-        expect(course).toEqual(expectedCourse);
+    expect(mockCourseRepository.find).toHaveBeenCalled();
+    expect(expectOutputCourse).toStrictEqual(courses);
       });
 
       it('deve retornar um NotFoundException', async () => {
