@@ -121,7 +121,7 @@ describe('CoursesService', () => {
       expect(expectOutputCourse).toStrictEqual(course);
         } catch (error) {
           expect(error).toBeInstanceOf(NotFoundException);
-          expect(error.message).toEqual(`Course ID ${courseId} not found`);
+      expect(error.message).toEqual(`Course ID ${id} not found`);
         }
       });
     });
