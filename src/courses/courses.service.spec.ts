@@ -117,6 +117,8 @@ describe('CoursesService', () => {
 
         try {
       const course = await service.findOne(id);
+      expect(mockCourseRepository.findOne).toHaveBeenCalled();
+      expect(expectOutputCourse).toStrictEqual(course);
         } catch (error) {
           expect(error).toBeInstanceOf(NotFoundException);
           expect(error.message).toEqual(`Course ID ${courseId} not found`);
