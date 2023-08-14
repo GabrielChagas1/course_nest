@@ -93,6 +93,13 @@ describe('CoursesService', () => {
       });
 
   it('should gets a course', async () => {
+    const expectOutputTags = [
+      {
+        id,
+        name: 'nestjs',
+        created_at: date,
+      },
+    ];
 
         try {
           await service.findOne(courseId);
