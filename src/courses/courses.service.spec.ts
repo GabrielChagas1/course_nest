@@ -116,7 +116,7 @@ describe('CoursesService', () => {
     service['courseRepository'] = mockCourseRepository;
 
         try {
-          await service.findOne(courseId);
+      const course = await service.findOne(id);
         } catch (error) {
           expect(error).toBeInstanceOf(NotFoundException);
           expect(error.message).toEqual(`Course ID ${courseId} not found`);
