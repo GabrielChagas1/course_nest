@@ -155,6 +155,11 @@ describe('CoursesService', () => {
     service['courseRepository'] = mockCourseRepository;
     //@ts-expect-error defined part of methods
     service['tagRepository'] = mockTagRepository;
+    const updateCourseDto: UpdateCourseDto = {
+      name: 'Test',
+      description: 'Test description',
+      tags: ['nestjs'],
+    };
     });
   });
 });
