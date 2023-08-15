@@ -126,6 +126,13 @@ describe('CoursesService', () => {
       });
 
   it('should updates a course', async () => {
+    const expectOutputTags = [
+      {
+        id,
+        name: 'nestjs',
+        created_at: date,
+      },
+    ];
     });
   });
 });
