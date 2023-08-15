@@ -160,6 +160,10 @@ describe('CoursesService', () => {
       description: 'Test description',
       tags: ['nestjs'],
     };
+    try {
+      const course = await service.update(id, updateCourseDto);
+      expect(mockCourseRepository.save).toHaveBeenCalled();
+      expect(expectOutputCourse).toStrictEqual(course);
     });
   });
 });
