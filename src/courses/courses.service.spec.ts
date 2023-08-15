@@ -124,6 +124,8 @@ describe('CoursesService', () => {
       expect(error.message).toEqual(`Course ID ${id} not found`);
         }
       });
+
+  it('should updates a course', async () => {
     });
   });
 });
