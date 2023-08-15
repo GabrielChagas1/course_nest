@@ -170,4 +170,28 @@ describe('CoursesService', () => {
     }
     });
   });
+  // describe('findOne', () => {
+  //   describe('buscar curso pelo ID', () => {
+  //     it('deve retornar o objeto Course', async () => {
+  //       const courseId = '1';
+  //       const expectedCourse = {};
+
+  //       courseRepository.findOne.mockReturnValue(expectedCourse);
+  //       const course = await service.findOne(courseId);
+  //       expect(course).toEqual(expectedCourse);
+  //     });
+
+  //     it('deve retornar um NotFoundException', async () => {
+  //       const courseId = '1';
+  //       courseRepository.findOne.mockReturnValue(undefined);
+
+  //       try {
+  //         await service.findOne(courseId);
+  //       } catch (error) {
+  //         expect(error).toBeInstanceOf(NotFoundException);
+  //         expect(error.message).toEqual(`Course ID ${courseId} not found`);
+  //       }
+  //     });
+  //   });
+  // });
 });
