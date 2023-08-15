@@ -133,6 +133,15 @@ describe('CoursesService', () => {
         created_at: date,
       },
     ];
+    const expectOutputCourse = [
+      {
+        id,
+        name: 'Test',
+        description: 'Test description',
+        created_at: date,
+        tags: expectOutputTags,
+      },
+    ];
     });
   });
 });
