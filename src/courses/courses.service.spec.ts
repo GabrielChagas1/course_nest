@@ -164,6 +164,10 @@ describe('CoursesService', () => {
       const course = await service.update(id, updateCourseDto);
       expect(mockCourseRepository.save).toHaveBeenCalled();
       expect(expectOutputCourse).toStrictEqual(course);
+    } catch (error) {
+      expect(error).toBeInstanceOf(NotFoundException);
+      expect(error.message).toEqual(`Course ID ${id} not found`);
+    }
     });
   });
 });
