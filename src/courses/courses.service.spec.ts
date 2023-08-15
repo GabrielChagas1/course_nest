@@ -142,6 +142,10 @@ describe('CoursesService', () => {
         tags: expectOutputTags,
       },
     ];
+    const mockCourseRepository = {
+      update: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
+      save: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
+      preload: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
     });
   });
 });
