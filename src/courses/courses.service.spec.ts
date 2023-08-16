@@ -170,6 +170,14 @@ describe('CoursesService', () => {
     }
     });
 
+  it('should delets a course', async () => {
+    const expectOutputTags = [
+      {
+        id,
+        name: 'nestjs',
+        created_at: date,
+      },
+    ];
   });
   // describe('findOne', () => {
   //   describe('buscar curso pelo ID', () => {
