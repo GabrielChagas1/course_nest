@@ -169,6 +169,7 @@ describe('CoursesService', () => {
       expect(error.message).toEqual(`Course ID ${id} not found`);
     }
     });
+
   });
   // describe('findOne', () => {
   //   describe('buscar curso pelo ID', () => {
