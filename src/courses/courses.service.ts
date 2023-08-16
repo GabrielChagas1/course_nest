@@ -20,10 +20,12 @@ export class CoursesService {
     });
   }
 
-  findOne(id: string) {
-    const course = this.courseRepository.findOne(id, {
+  async findOne(id: number) {
+    const course = await this.courseRepository.findOne({
+      where: { id },
       relations: ['tags'],
     });
+
     if (!course) {
       throw new NotFoundException(`Course ID ${id} not found`);
     }
