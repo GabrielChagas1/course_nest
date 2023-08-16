@@ -187,6 +187,10 @@ describe('CoursesService', () => {
         tags: expectOutputTags,
       },
     ];
+    const mockCourseRepository = {
+      findOne: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
+      remove: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
+    };
   });
   // describe('findOne', () => {
   //   describe('buscar curso pelo ID', () => {
