@@ -191,6 +191,8 @@ describe('CoursesService', () => {
       findOne: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
       remove: jest.fn().mockReturnValue(Promise.resolve(expectOutputCourse)),
     };
+    //@ts-expect-error defined part of methods
+    service['courseRepository'] = mockCourseRepository;
   });
   // describe('findOne', () => {
   //   describe('buscar curso pelo ID', () => {
