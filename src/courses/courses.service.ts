@@ -65,8 +65,10 @@ export class CoursesService {
     return this.courseRepository.save(course);
   }
 
-  async remove(id: string) {
-    const course = await this.courseRepository.findOne(id);
+  async remove(id: number) {
+    const course = await this.courseRepository.findOne({
+      where: { id },
+    });
 
     if (!course) {
       throw new NotFoundException(`Course ID ${id} not found`);
