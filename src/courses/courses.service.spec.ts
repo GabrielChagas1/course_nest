@@ -1,4 +1,3 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { CoursesService } from './courses.service';
 import { Repository } from 'typeorm';
 import { NotFoundException } from '@nestjs/common';
@@ -90,7 +89,7 @@ describe('CoursesService', () => {
     const courses = await service.findAll();
     expect(mockCourseRepository.find).toHaveBeenCalled();
     expect(expectOutputCourse).toStrictEqual(courses);
-      });
+  });
 
   it('should gets a course', async () => {
     const expectOutputTags = [
@@ -115,15 +114,15 @@ describe('CoursesService', () => {
     //@ts-expect-error defined part of methods
     service['courseRepository'] = mockCourseRepository;
 
-        try {
+    try {
       const course = await service.findOne(id);
       expect(mockCourseRepository.findOne).toHaveBeenCalled();
       expect(expectOutputCourse).toStrictEqual(course);
-        } catch (error) {
-          expect(error).toBeInstanceOf(NotFoundException);
+    } catch (error) {
+      expect(error).toBeInstanceOf(NotFoundException);
       expect(error.message).toEqual(`Course ID ${id} not found`);
-        }
-      });
+    }
+  });
 
   it('should updates a course', async () => {
     const expectOutputTags = [
@@ -168,7 +167,7 @@ describe('CoursesService', () => {
       expect(error).toBeInstanceOf(NotFoundException);
       expect(error.message).toEqual(`Course ID ${id} not found`);
     }
-    });
+  });
 
   it('should delets a course', async () => {
     const expectOutputTags = [
@@ -198,6 +197,10 @@ describe('CoursesService', () => {
       const course = await service.remove(id);
       expect(mockCourseRepository.remove).toHaveBeenCalled();
       expect(expectOutputCourse).toStrictEqual(course);
+    } catch (error) {
+      expect(error).toBeInstanceOf(NotFoundException);
+      expect(error.message).toEqual(`Course ID ${id} not found`);
+    }
   });
   // describe('findOne', () => {
   //   describe('buscar curso pelo ID', () => {
