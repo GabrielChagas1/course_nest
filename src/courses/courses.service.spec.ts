@@ -193,6 +193,11 @@ describe('CoursesService', () => {
     };
     //@ts-expect-error defined part of methods
     service['courseRepository'] = mockCourseRepository;
+
+    try {
+      const course = await service.remove(id);
+      expect(mockCourseRepository.remove).toHaveBeenCalled();
+      expect(expectOutputCourse).toStrictEqual(course);
   });
   // describe('findOne', () => {
   //   describe('buscar curso pelo ID', () => {
