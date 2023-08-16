@@ -1,6 +1,5 @@
 import { Injectable, Inject, NotFoundException } from '@nestjs/common';
 import { Course } from './entities/course.entity';
-import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
@@ -78,7 +77,7 @@ export class CoursesService {
   }
 
   private async preloadTagByName(name: string): Promise<Tag> {
-    const tag = await this.tagRepository.findOne({ name });
+    const tag = await this.tagRepository.findOne({ where: { name } });
 
     if (tag) {
       return tag;
