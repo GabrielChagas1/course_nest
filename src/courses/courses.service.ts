@@ -12,8 +12,9 @@ export class CoursesService {
   private courseRepository: Repository<Course>;
 
   @Inject('TAGS_REPOSITORY')
+  private tagRepository: Repository<Tag>;
 
-  findAll() {
+  async findAll() {
     return this.courseRepository.find({
       relations: ['tags'],
     });
